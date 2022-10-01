@@ -6,7 +6,7 @@
  
  renderer.setSize( window.innerWidth, window.innerHeight )
  // sets renderer background color
- renderer.setClearColor("#222222")
+ renderer.setClearColor("#33333")
  document.body.appendChild( renderer.domElement )
  camera.position.z = 5
  
@@ -21,12 +21,12 @@
  
  // basic cube
  var geometry = new THREE.BoxGeometry( 1, 1, 1)
- var material = new THREE.MeshStandardMaterial( { color: 0xff0051, flatShading: true, metalness: 0, roughness: 1 })
+ var material = new THREE.MeshStandardMaterial( { color: 0xff058, flatShading: true, metalness: 0, roughness: 1 })
  var cube = new THREE.Mesh ( geometry, material )
  scene.add( cube )
  
  // wireframe cube
- var geometry = new THREE.BoxGeometry( 3, 3, 3)
+ var geometry = new THREE.BoxGeometry( 2, 2, 2)
  var material = new THREE.MeshBasicMaterial( {
      color: "#dadada", wireframe: true, transparent: true
  })
@@ -45,10 +45,10 @@
  
  function animate() {
      requestAnimationFrame( animate )
-     cube.rotation.x += 0.04;
-     cube.rotation.y += 0.04;
-     wireframeCube.rotation.x -= 0.01;
-     wireframeCube.rotation.y -= 0.01;
+     cube.rotation.x += 0.05;
+     cube.rotation.y += 0.05;
+     wireframeCube.rotation.x -= 0.05;
+     wireframeCube.rotation.y -= 0.05;
      renderer.render( scene, camera )
  }
  animate()
